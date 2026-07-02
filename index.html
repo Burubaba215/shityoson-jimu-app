@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>市町村事務クイズ</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <section class="topbar">
+      <div><p class="eyebrow">サービス提供事業者関連</p><h1>市町村事務クイズ</h1></div>
+      <div class="progress-box"><span id="stageLabel">覚え歌</span><strong id="scoreLabel">0 / 0</strong></div>
+    </section>
+    <section id="songScreen" class="screen active">
+      <div class="song-layout">
+        <div class="video-panel">
+          <video id="songVideo" src="./assets/oboeka.mp4" controls loop playsinline></video>
+          <div id="videoFallback" class="video-fallback hidden"><strong>覚え歌動画</strong><span>assets/oboeka.mp4 を置くとここで再生されます。</span></div>
+        </div>
+        <div class="song-card">
+          <p class="mini-title">覚える軸</p>
+          <h2>市町村指定は3つだけ</h2>
+          <ul class="memory-list"><li>地域密着型</li><li>居宅介護支援</li><li>介護予防支援</li></ul>
+          <p class="phrase">「地域」と「ケアプラン」は身近だから市町村！</p>
+          <button id="startBtn" class="primary">クイズ開始</button>
+        </div>
+      </div>
+    </section>
+    <section id="quizScreen" class="screen">
+      <div class="quiz-shell">
+        <div class="meter"><div id="meterFill"></div></div>
+        <p id="questionMeta" class="question-meta"></p>
+        <h2 id="questionText"></h2>
+        <div id="answerArea" class="answer-area"></div>
+        <div id="feedback" class="feedback"></div>
+        <button id="nextBtn" class="primary hidden">次へ</button>
+      </div>
+    </section>
+    <section id="resultScreen" class="screen">
+      <div class="result-panel">
+        <p class="mini-title">結果発表</p><h2 id="resultTitle"></h2><p id="resultText"></p>
+        <div class="result-score"><span id="finalScore"></span><small id="finalRate"></small></div>
+        <button id="loopBtn" class="primary">覚え歌へ戻る</button>
+      </div>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
